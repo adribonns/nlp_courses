@@ -47,9 +47,7 @@ Each step refines the representation of text to help algorithms capture meaning 
 - Modern LLMs (e.g., GPT, BERT) use **subword tokenization** like BPE (Byte-Pair Encoding) or WordPiece to handle rare words and balance vocabulary size.
 
 **Formula (approximate vocabulary compression):**
-\[
-V_{new} = V_{old} - n + 1
-\]
+$$V_{new} = V_{old} - n + 1$$
 where \(n\) is the number of symbol pairs merged during BPE training.
 
 **Key references:**  
@@ -91,9 +89,7 @@ Example:
 **Algorithms:** Porter Stemmer, Snowball Stemmer.
 
 Stemming formula (simplified):
-\[
-f_{stem}(word) = prefix(word, k)
-\]
+$$f_{stem}(word) = prefix(word, k)$$
 where \(k\) truncates suffixes according to rule-based heuristics.
 
 ---

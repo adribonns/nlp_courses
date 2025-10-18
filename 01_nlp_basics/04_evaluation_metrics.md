@@ -30,18 +30,9 @@ For many NLP tasks (e.g., sentiment analysis, spam detection, NER), evaluation f
 
 ### Basic Metrics
 $$\text{Accuracy}=\frac{TP+TN}{TP+TN+FP+FN}$$
-
-\[
-\text{Precision} = \frac{TP}{TP + FP}
-\]
-
-\[
-\text{Recall} = \frac{TP}{TP + FN}
-\]
-
-\[
-\text{F1 Score} = 2 \cdot \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
-\]
+$$\text{Precision} = \frac{TP}{TP + FP}$$
+$$\text{Recall} = \frac{TP}{TP + FN}$$
+$$\text{F1 Score} = 2 \cdot \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}$$
 
 **Interpretation:**
 - **Precision**: correctness of positive predictions.  
@@ -83,9 +74,7 @@ Tasks like translation, summarization, or dialogue require measuring **textual s
 **Purpose:** Evaluate machine translation by comparing n-gram overlap with reference translations.
 
 Formula:
-\[
-\text{BLEU} = BP \cdot \exp\left( \sum_{n=1}^{N} w_n \log p_n \right)
-\]
+$$\text{BLEU} = BP \cdot \exp\left( \sum_{n=1}^{N} w_n \log p_n \right)$$
 
 where:
 - \(p_n\): precision for n-grams  
@@ -108,12 +97,8 @@ Used for **summarization**.
 Measures overlap between system and reference summaries.
 
 Most common variant:  
-\[
-\text{ROUGE-1, ROUGE-2} = \text{Recall of unigrams/bigrams overlap}
-\]
-\[
-\text{ROUGE-L} = \text{Longest Common Subsequence Recall}
-\]
+$$\text{ROUGE-1, ROUGE-2} = \text{Recall of unigrams/bigrams overlap}$$
+$$\text{ROUGE-L} = \text{Longest Common Subsequence Recall}$$
 
 **Reference:** Lin (2004), *ROUGE: A Package for Automatic Evaluation of Summaries.*
 
@@ -125,9 +110,7 @@ Most common variant:
 - **BERTScore**: Uses contextual embeddings (BERT) for semantic similarity —  
   captures meaning, not just token overlap.
 
-\[
-\text{BERTScore} = \text{mean cosine similarity between token embeddings}
-\]
+$$\text{BERTScore} = \text{mean cosine similarity between token embeddings}$$
 
 **Reference:** Zhang et al. (2019), *BERTScore: Evaluating Text Generation with BERT.*
 
@@ -137,9 +120,7 @@ Most common variant:
 
 Perplexity measures how well a model predicts text (likelihood of a test corpus).
 
-\[
-\text{Perplexity} = \exp\left(-\frac{1}{N} \sum_{i=1}^{N} \log P(w_i | w_1, ..., w_{i-1}) \right)
-\]
+$$\text{Perplexity} = \exp\left(-\frac{1}{N} \sum_{i=1}^{N} \log P(w_i | w_1, ..., w_{i-1}) \right)$$
 
 - Lower perplexity → better predictive power.  
 - Used for traditional LMs and autoregressive models.
