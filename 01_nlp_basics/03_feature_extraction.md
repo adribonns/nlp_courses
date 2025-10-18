@@ -55,9 +55,9 @@ where
 $$\text{TF}(t, d) = \frac{f_{t,d}}{\sum_k f_{k,d}}, \quad
 \text{IDF}(t) = \log\frac{N}{1 + n_t}$$
 
-- \(f_{t,d}\): frequency of term *t* in document *d*  
-- \(N\): total number of documents  
-- \(n_t\): number of documents containing *t*
+- $f_{t,d}$ is the frequency of term *t* in document *d*  
+- $N$ is the total number of documents  
+- $n_t$ is the number of documents containing *t*
 
 **Intuition:**  
 Common words across documents get low weights, rare yet significant words get high weights.
@@ -126,8 +126,10 @@ $$\text{vec}("king") - \text{vec}("man") + \text{vec}("woman") \approx \text{vec
 **Idea:** Use global co-occurrence statistics rather than local context windows.
 
 Objective:
+
 $$J = \sum_{i,j=1}^{V} f(X_{ij})(w_i^T \tilde{w}_j + b_i + \tilde{b}_j - \log X_{ij})^2$$
-where \(X_{ij}\) is the co-occurrence count of words *i* and *j*.
+
+where $X_{ij}$ is the co-occurrence count of words *i* and *j*.
 
 **Reference:** Pennington, Socher, & Manning (2014), *GloVe: Global Vectors for Word Representation.*
 
