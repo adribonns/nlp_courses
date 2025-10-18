@@ -29,10 +29,7 @@ For many NLP tasks (e.g., sentiment analysis, spam detection, NER), evaluation f
 | **Actual Negative** | False Positive (FP) | True Negative (TN) |
 
 ### Basic Metrics
-
-\[
-\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}
-\]
+![Accuracy formula](https://latex.codecogs.com/svg.latex?\text{Accuracy}=\frac{TP+TN}{TP+TN+FP+FN}
 
 \[
 \text{Precision} = \frac{TP}{TP + FP}
