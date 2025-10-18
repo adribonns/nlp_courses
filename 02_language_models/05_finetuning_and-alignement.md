@@ -122,12 +122,10 @@ Instead of sampling and updating via PPO, DPO **directly optimizes** the policy 
 
 Given pairs $(x, y^+, y^-)$ where $y^+$ is preferred over $y^-$:
 
-$$
-\mathcal{L}_{\text{DPO}} = - \log \sigma\left( 
+$$\mathcal{L}_{\text{DPO}} = - \log \sigma\left( 
 \beta \left( \log \pi_\theta(y^+|x) - \log \pi_\theta(y^-|x) 
 - \log \pi_{\text{ref}}(y^+|x) + \log \pi_{\text{ref}}(y^-|x)
-\right) \right)
-$$
+\right) \right)$$
 
 Advantages:
 - No reward model needed.
