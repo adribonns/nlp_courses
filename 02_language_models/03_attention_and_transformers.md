@@ -88,6 +88,7 @@ $$
 $$
 
 where  
+
 $$
 \text{head}_i = \text{Attention}(QW_Q^i, KW_K^i, VW_V^i)
 $$
@@ -210,4 +211,3 @@ They are not only for text — also used in vision (ViT), speech, protein foldin
 > The Transformer architecture operationalizes this idea at scale — using self-attention, residuals, and positional encoding —  
 > enabling massive pretraining and transfer across tasks.
 
-s
