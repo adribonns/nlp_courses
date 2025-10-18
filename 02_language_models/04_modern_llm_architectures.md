@@ -27,6 +27,7 @@ Modern Transformer-based LMs fall into **three main architectural families**:
 $$
 \mathcal{L}_{MLM} = - \sum_{i \in M} \log P(w_i | w_{\setminus M})
 $$
+
 where $M$ is the set of masked positions.
 
 **Use cases:** text classification, NER, sentence embeddings, retrieval.
