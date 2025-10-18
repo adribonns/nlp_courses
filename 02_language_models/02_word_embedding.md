@@ -37,9 +37,8 @@ Example for a 5-word vocab:
 
 ### Embedding Representation
 Instead, each word is a **dense vector** of dimension $d$ (typically 100–1000):
-$$
-\text{cat} \rightarrow \mathbf{v}_{\text{cat}} = [0.15, -0.27, ..., 0.73]
-$$
+
+$$\text{cat} \rightarrow \mathbf{v}_{\text{cat}} = [0.15, -0.27, ..., 0.73]$$
 
 These vectors are **learned** from data such that similar words have nearby vectors.
 
@@ -54,24 +53,21 @@ Word2Vec introduced two architectures to learn embeddings efficiently:
    - Example: input = “the ___ sat on the mat” → predict “cat”
 
    Objective:
-   $$
-   \max \sum_{t} \log P(w_t | w_{t−c}, ..., w_{t+c})
-   $$
+
+   $$\max \sum_{t} \log P(w_t | w_{t−c}, ..., w_{t+c})$$
 
 2. **Skip-Gram:**
    - Predict context words given the target.
    - Example: input = “cat” → predict “the”, “sat”, “on”, etc.
 
    Objective:
-   $$
-   \max \sum_{t} \sum_{−c \le j \le c, j \ne 0} \log P(w_{t+j} | w_t)
-   $$
+
+   $$\max \sum_{t} \sum_{−c \le j \le c, j \ne 0} \log P(w_{t+j} | w_t)$$
 
 ### Output Probability
 Both models use a softmax layer:
-$$
-P(w_o | w_i) = \frac{e^{v_{w_o} \cdot v_{w_i}}}{\sum_{w=1}^{|V|} e^{v_w \cdot v_{w_i}}}
-$$
+
+$$P(w_o | w_i) = \frac{e^{v_{w_o} \cdot v_{w_i}}}{\sum_{w=1}^{|V|} e^{v_w \cdot v_{w_i}}}$$
 
 To avoid large vocabulary costs, **negative sampling** or **hierarchical softmax** is used.
 
@@ -86,6 +82,7 @@ $$
 $$
 
 Cosine similarity is commonly used:
+
 $$
 \text{cosine\_sim}(u, v) = \frac{u \cdot v}{\|u\| \|v\|}
 $$
@@ -98,6 +95,7 @@ Word2Vec is local (context-based), whereas **GloVe** leverages **global co-occur
 
 ### Core Idea
 Learn embeddings that reproduce observed co-occurrence ratios:
+
 $$
 w_i^T \tilde{w}_j + b_i + \tilde{b}_j = \log X_{ij}
 $$
@@ -106,6 +104,7 @@ Where:
 - $X_{ij}$ = number of times word $j$ appears in context of $i$
 
 Optimized via weighted least squares:
+
 $$
 J = \sum_{i,j} f(X_{ij}) (w_i^T \tilde{w}_j + b_i + \tilde{b}_j - \log X_{ij})^2
 $$
