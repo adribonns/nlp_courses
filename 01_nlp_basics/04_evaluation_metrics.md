@@ -74,12 +74,13 @@ Tasks like translation, summarization, or dialogue require measuring **textual s
 **Purpose:** Evaluate machine translation by comparing n-gram overlap with reference translations.
 
 Formula:
+
 $$\text{BLEU} = BP \cdot \exp\left( \sum_{n=1}^{N} w_n \log p_n \right)$$
 
 where:
-- \(p_n\): precision for n-grams  
-- \(BP\): brevity penalty = \( \min(1, e^{1 - r/c}) \),  
-  with \(r\) = reference length, \(c\) = candidate length  
+- $p_n$ is the precision for n-grams  
+- $BP$: brevity penalty = $\min(1, e^{1 - r/c})$,  
+  with $r$ = reference length, $c$ = candidate length  
 
 **Interpretation:**
 - High BLEU → similar to reference  
@@ -96,8 +97,10 @@ where:
 Used for **summarization**.  
 Measures overlap between system and reference summaries.
 
-Most common variant:  
+Most common variant:
+  
 $$\text{ROUGE-1, ROUGE-2} = \text{Recall of unigrams/bigrams overlap}$$
+
 $$\text{ROUGE-L} = \text{Longest Common Subsequence Recall}$$
 
 **Reference:** Lin (2004), *ROUGE: A Package for Automatic Evaluation of Summaries.*
